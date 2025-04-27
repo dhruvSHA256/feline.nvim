@@ -18,7 +18,7 @@ end
 function M.lsp_client_names()
     local clients = {}
 
-    for _, client in pairs(lsp.buf_get_clients(0)) do
+    for _, client in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
         clients[#clients + 1] = client.name
     end
 
